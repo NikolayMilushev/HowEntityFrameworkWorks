@@ -14,13 +14,14 @@ namespace HowEntityFrameworkWorks
                 db.Products.Add(new Product { Name = "Product 2" });
                 db.SaveChanges();
 
-                var products = db.Products.AsNoTracking().ToList();
+                var products = db.Products.ToList();
                 foreach (var product in products)
                 {
                     Console.WriteLine(product.Name);
                 }
                 
-                
+                Console.WriteLine("Go to management studio and modify products' names");
+                Console.ReadLine();
 
                 products = db.Products.ToList();
                 foreach (var product in products)
